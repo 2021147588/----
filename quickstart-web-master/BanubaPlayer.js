@@ -57,7 +57,6 @@ const crop = (renderWidth, renderHeight) => {
   var ratio = renderWidth / renderHeight;
   const desiredHeight = 640;
   const desiredWidth = 4 * parseInt((desiredHeight*ratio)/4);
-  console.log(desiredHeight, desiredWidth);
 
   const dx = (renderWidth - desiredWidth) / 2;
   const dy = (renderHeight - desiredHeight) / 2;

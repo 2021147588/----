@@ -332,7 +332,7 @@ export const effectsList = {
       //   label: "Eye Whitening",
       //   effects: [
       //     {
-      //       name: "EyesWitening_Toggle.zip",
+      //       name: "EyesWitening_slider.zip",
       //       control: "slider",
       //       params: ["onDataUpdate"],
       //     },
@@ -342,7 +342,7 @@ export const effectsList = {
       //   label: "Tooth Whitening",
       //   effects: [
       //     {
-      //       name: "TeethWitening_Toggle.zip",
+      //       name: "TeethWitening_slider.zip",
       //       control: "slider",
       //       params: ["onDataUpdate"],
       //     },

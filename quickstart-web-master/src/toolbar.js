@@ -84,13 +84,12 @@ const createEffectBlock = async (effects) => {
 const clickDisable = () => {
   var confirmflag = confirm("서비스 준비중입니다. 피드백을 남겨주시면 나중에 앱 출시에 큰 도움이 됩니다. 피드백을 남겨주시겠어요?")
   if(confirmflag){
-    window.location.href = '/main/index.html#form02-0';
+    window.location.href = '/#form02-0'; 
   }
 }
 
 const createCategoryBlock = (categories) => {
   let htmlBlock = "";
-  console.log(categories);
   for (let category in categories) {
     
     htmlBlock += `
@@ -139,14 +138,11 @@ const createCategoryBlock = (categories) => {
   };
 
   document.querySelectorAll('input[name="category"]').forEach((el, i) => {
-    console.log("el", el, "i", i);
     el.addEventListener("click", onCategorySelect);
     if (i === 0) el.click();
   });
   document.querySelectorAll('input[name="category"]').forEach((el, i) => {
-    console.log("selected")
     if (i === 2){
-      console.log("i is 2");
       el.addEventListener('click', clickDisable)
     }
   });

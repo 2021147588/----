@@ -31,7 +31,6 @@
             <label id="btn-0" for="webcam">웹 캠에서 성형해보기</label>
           </div>
           <div class="start-screen__photo">
-            <input type="file" id="image" accept="image/*" />
             <label id="btn-1" for="image">사진으로 성형해보기</label>
           </div>
           <div class="start-screen__image"></div>
@@ -136,6 +135,9 @@
         </div>
         <div class="categories"></div>
         <div class="technologies"></div>
+        
+        <div id = "btn-wrapper">
+          <label id="btn-2">피드백 남기기</label></div>
       </div>
     </main>
   </body>
@@ -198,24 +200,24 @@
     return formattedDate;
 }
     function handleClick(event, i){
-      // var sendData = JSON.stringify(
-      //   {
-      //     "id": getUVfromCookie(),
-      //     "time_stamp": getTimeStamp(),
-      //     "btn": `${i}`
-      //   }
-      // ) 
-      // var appscript_link ='https://script.google.com/macros/s/AKfycbzOKYXHe0XVITe3D8jymUrs_dIEDYRf_UYmcUxatUGmjbLalfMhPNqHvCMd-hFt_aazaQ/exec'
+      var sendData = JSON.stringify(
+        {
+          "id": getUVfromCookie(),
+          "time_stamp": getTimeStamp(),
+          "btn": `${i}`
+        }
+      ) 
+      var appscript_link ='https://script.google.com/macros/s/AKfycbzOKYXHe0XVITe3D8jymUrs_dIEDYRf_UYmcUxatUGmjbLalfMhPNqHvCMd-hFt_aazaQ/exec'
       
-      // axios.get(appscript_link+'?action=insert&table=tab_cam_pic&data='+sendData)
-      //                 .then(response => {
-      //                 console.log(JSON.stringify(response));
+      axios.get(appscript_link+'?action=insert&table=tab_cam_pic&data='+sendData)
+                      .then(response => {
+                      console.log(JSON.stringify(response));
                       
-      //             })
-      //             .catch(error => {
-      //         console.error("Error:", error);
-      //         alert("오류가 발생했습니다. 관리자에게 문의하세요.");
-      //     });;
+                  })
+                  .catch(error => {
+              console.error("Error:", error);
+              alert("오류가 발생했습니다. 관리자에게 문의하세요.");
+          });;
     }
 
     document.getElementById('btn-0').addEventListener('click', function(event){
@@ -223,9 +225,18 @@
         });
     
     document.getElementById('btn-1').addEventListener('click', function(event){
-            handleClick(event, 1);
-        });
-
+      handleClick(event, 1);
+      var confirmflag = confirm("서비스 준비중입니다. 피드백을 남겨주시면 나중에 앱 출시에 큰 도움이 됩니다. 피드백을 남겨주시겠어요?")
+      if(confirmflag){
+        window.location.href = '/#form02-0';
+      }
+      else{
+        window.location.href = '/simulate';
+      }  
+    });
+    document.getElementById('btn-2').addEventListener('click', function(event){
+      window.location.href = '/#form02-0'; 
+    });
   </script>
   
 </html>
