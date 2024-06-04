@@ -22,8 +22,6 @@ const modulesList = [
 ];
 
 // NOTE: desired width and height should be multiple of 4
-const desiredWidth = 1120;
-const desiredHeight = 524;
 
 export const fps = {
   cam: 0,
@@ -56,11 +54,17 @@ const [player, modules] = await Promise.all([
 await player.addModule(...modules);
 
 const crop = (renderWidth, renderHeight) => {
+  var ratio = renderWidth / renderHeight;
+  const desiredHeight = 640;
+  const desiredWidth = 4 * parseInt((desiredHeight*ratio)/4);
+  console.log(desiredHeight, desiredWidth);
+
   const dx = (renderWidth - desiredWidth) / 2;
   const dy = (renderHeight - desiredHeight) / 2;
 
   return [dx, dy, desiredWidth, desiredHeight];
 };
+
 
 const startFpsTracking = () => {
   player.addEventListener("framereceived", () => fpsCounter.cam++);
