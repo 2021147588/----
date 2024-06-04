@@ -27,11 +27,6 @@ body{
 }
 
 
-canvas {
-  width: 100vw;
-  height: 80vh;
-}
-
 #fps {
   font-size: 10px;
   font-weight: 700;
