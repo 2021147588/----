@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:400,500,700,900&display=swap");
 
-canvas { object-fit:contain !important;}
+canvas { 
+  overflow:hidden;
+  width: 100%;
+  height: 100%;
+  object-fit:cover !important;
+}
 
 main {
   width: 100vw;
