@@ -25,10 +25,10 @@
         </div>
         <div class="start-screen__inner hidden">
           <div class="start-screen__title">성형 후 얼굴을 두가지 옵션으로 확인하세요!</div>
-          <div class="start-screen__text">사진 및 웹 캠 영상은 서버에 저장되지 않습니다. </div>
+          <div class="start-screen__text">사진 및 카메라 영상은 서버에 저장되지 않습니다. </div>
           <div class="start-screen__webcam">
             <input type="radio" name="source" id="webcam" value="webcam" />
-            <label id="btn-0" for="webcam">웹 캠에서 성형해보기</label>
+            <label id="btn-0" for="webcam">카메라로 성형해보기</label>
           </div>
           <div class="start-screen__photo">
             <label id="btn-1" for="image">사진으로 성형해보기</label>
@@ -226,7 +226,7 @@
     
     document.getElementById('btn-1').addEventListener('click', function(event){
       handleClick(event, 1);
-      var confirmflag = confirm("서비스 준비중입니다. 피드백을 남겨주시면 나중에 앱 출시에 큰 도움이 됩니다. 피드백을 남겨주시겠어요?")
+      var confirmflag = confirm("서비스 준비중입니다! 피드백을 남겨주시면 서비스 출시 후 무료 이용권 증정해 드립니다. 피드백을 남겨주시겠어요?")
       if(confirmflag){
         window.location.href = '/#form02-0';
       }

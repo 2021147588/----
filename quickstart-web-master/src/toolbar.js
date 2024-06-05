@@ -82,7 +82,7 @@ const createEffectBlock = async (effects) => {
   }
 };
 const clickDisable = () => {
-  var confirmflag = confirm("서비스 준비중입니다. 피드백을 남겨주시면 나중에 앱 출시에 큰 도움이 됩니다. 피드백을 남겨주시겠어요?")
+  var confirmflag = confirm("서비스 준비중입니다! 피드백을 남겨주시면 서비스 출시 후 무료 이용권 증정해 드립니다. 피드백을 남겨주시겠어요?")
   if(confirmflag){
     window.location.href = '/#form02-0'; 
   }
