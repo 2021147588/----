@@ -317,31 +317,10 @@ var data = JSON.stringify(
             "utm":utm,
             "device":mobile}
             );
-function handleClick(e, i){
-    var sendData = JSON.stringify(
-        {
-            "id": getUVfromCookie(),
-            "time_stamp": getTimeStamp(),
-            "i": `${i}`
-        }
-    )
-    var appscript_link ='https://script.google.com/macros/s/AKfycbzOKYXHe0XVITe3D8jymUrs_dIEDYRf_UYmcUxatUGmjbLalfMhPNqHvCMd-hFt_aazaQ/exec'
-   
-    axios.get(appscript_link+'?action=insert&table=tab_simulate&data='+sendData)
-                    .then(response => {
-                    console.log(JSON.stringify(response));
-                    
-                })
-                .catch(error => {
-            console.error("Error:", error);
-            alert("오류가 발생했습니다. 관리자에게 문의하세요.");
-        });;
-    
-}
 
 $(document).ready(function () {
 
-    axios.get(appscript+'?action=insert&table=tab_visit&data='+data)
+    axios.get(appscript+'?action=insert&table=tab_master&data='+data)
                     .then(response => {
                     console.log(JSON.stringify(response));
                 });
@@ -384,24 +363,6 @@ $("#submit").on("click", function () {
 
 
 
-</script>
-
-<script>
-    document.getElementById('btn-0').addEventListener('click', function(event){
-            handleClick(event, 0);
-        });
-    document.getElementById('btn-1').addEventListener('click', function(event){
-            handleClick(event, 1);
-        });
-    document.getElementById('btn-2').addEventListener('click', function(event){
-            handleClick(event, 2);
-        });
-    document.getElementById('btn-3').addEventListener('click', function(event){
-            handleClick(event, 3);
-        });
-    document.getElementById('btn-4').addEventListener('click', function(event){
-            handleClick(event, 4);
-        });
 </script>
 
 </body>

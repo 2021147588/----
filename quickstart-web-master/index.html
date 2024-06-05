@@ -156,7 +156,6 @@
   <!-- 수업중 axios를 사용하기 위해 CDN 추가 -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
-    
     var ip = "null";
     function getIP(json) {
       console.log(json);
@@ -169,7 +168,6 @@
       }
   </script>
   <script type="application/javascript" src="https://jsonip.com?format=jsonp&callback=getIP"></script>
-
   <script>
     const appscript = 'https://script.google.com/macros/s/AKfycbzOKYXHe0XVITe3D8jymUrs_dIEDYRf_UYmcUxatUGmjbLalfMhPNqHvCMd-hFt_aazaQ/exec'
     function getCookieValue(name) {
@@ -222,7 +220,7 @@
       const formattedDate = `${padValue(year)}-${padValue(month)}-${padValue(day)} ${padValue(hours)}:${padValue(minutes)}:${padValue(seconds)}`;
 
     return formattedDate;
-}
+    }
     var mobile = 'desktop';
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // true for mobile device
@@ -232,8 +230,6 @@
         var queryString = location.search;
         const urlParams = new URLSearchParams(queryString);
         const utm = urlParams.get("utm");
-
-
 
     function handleClick(event, i){
       var sendData = JSON.stringify(
@@ -248,14 +244,13 @@
       axios.get(appscript_link+'?action=insert&table=tab_cam_pic&data='+sendData)
                       .then(response => {
                       console.log(JSON.stringify(response));
-                      
                   })
                   .catch(error => {
               console.error("Error:", error);
               alert("오류가 발생했습니다. 관리자에게 문의하세요.");
           });;
     }
-
+    
     var data = JSON.stringify(
             {"id": getUVfromCookie(),
             "landingUrl":window.location.href, 
@@ -271,12 +266,14 @@
                       .then(response => {
                       console.log(JSON.stringify(response));
                   });
-      });
-
+      });    
+  </script>
+  <script>
+    
     document.getElementById('btn-0').addEventListener('click', function(event){
             handleClick(event, 0);
         });
-    
+
     document.getElementById('btn-1').addEventListener('click', function(event){
       handleClick(event, 1);
       var confirmflag = confirm("서비스 준비중입니다! 피드백을 남겨주시면 서비스 출시 후 무료 이용권 증정해 드립니다. 피드백을 남겨주시겠어요?")
